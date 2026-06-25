@@ -7,12 +7,10 @@
 <meta name="description" content="AZIRA LTD - Professional organisers of exhibitions, trade fairs, and conferences across the UK.">
 <style>
 :root {
---primary: #0f2b5b;
---accent: #d97706;
---secondary: #e63946;
+    --primary: #0f2b5b;
+    --accent: #d97706;
+    --secondary: #e63946;
 }
-
-* { box-sizing: border-box; }
 
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
@@ -32,25 +30,26 @@ header {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-nav {
+.nav-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 800;
     letter-spacing: -1px;
 }
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
@@ -58,15 +57,17 @@ nav {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
-    white-space: nowrap;
 }
 
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover { 
+    color: var(--accent); 
+}
 
+/* HERO */
 .hero {
     background: linear-gradient(rgba(15,43,91,0.75), rgba(15,43,91,0.75)),
                 url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
-    min-height: 80vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     color: white;
@@ -77,18 +78,16 @@ nav {
 .hero-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 1rem;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     text-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    line-height: 1.1;
 }
 
 .hero-content p {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     max-width: 700px;
     margin: 0 auto 2rem;
 }
@@ -96,7 +95,7 @@ nav {
 .btn {
     background: var(--accent);
     color: white;
-    padding: 14px 32px;
+    padding: 16px 36px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
@@ -110,28 +109,31 @@ nav {
     box-shadow: 0 10px 25px rgba(217,119,6,0.4);
 }
 
-section { padding: 5rem 0; }
+section { 
+    padding: 6rem 0; 
+}
 
 .container { 
     max-width: 1200px; 
     margin: 0 auto; 
-    padding: 0 1.5rem; 
+    padding: 0 2rem; 
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     color: var(--primary);
-    line-height: 1.2;
 }
 
+/* Responsive Grid */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
 }
 
+/* Cards */
 .card {
     background: white;
     border-radius: 16px;
@@ -140,227 +142,249 @@ h2 {
     transition: all 0.4s;
 }
 
-.card:hover { transform: translateY(-8px); }
+.card:hover { 
+    transform: translateY(-12px); 
+}
 
 .service-img {
-    height: 220px;
+    height: 240px;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
     text-shadow: 0 3px 8px rgba(0,0,0,0.7);
-    text-align: center;
-    padding: 1rem;
 }
 
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer */
 footer {
     background: #0f172a;
     color: #cbd5e1;
     padding: 4rem 0 2rem;
 }
 
-footer .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-/* ==================== MOBILE RESPONSIVE ==================== */
+/* ===================== MOBILE RESPONSIVE ===================== */
 @media (max-width: 768px) {
-    .logo { font-size: 1.6rem; }
-    
-    .hero { min-height: 70vh; }
-    
-    .hero-content h1 { font-size: 2.4rem; }
-    .hero-content p { font-size: 1.1rem; }
-    
-    h2 { font-size: 2rem; }
-    
-    section { padding: 3.5rem 0; }
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
     
     .nav-links {
         flex-direction: column;
-        gap: 0.8rem;
-        width: 100%;
-        text-align: center;
+        gap: 1rem;
         margin-top: 1rem;
     }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
     
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
     .card-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
     }
-    
+
     .service-img {
-        height: 180px;
-        font-size: 1.2rem;
+        height: 200px;
+        font-size: 1.3rem;
     }
-    
-    .container { padding: 0 1rem; }
-    
-    .btn { padding: 12px 28px; font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
-    .hero-content h1 { font-size: 2.1rem; }
-    .hero { padding: 1.5rem 0.8rem; }
+    .hero {
+        min-height: 80vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
 }
 </style>
 </head>
 <body>
+
 <!-- HEADER -->
 <header>
-<nav>
-    <div class="logo">AZIRA LTD</div>
-    <div class="nav-links">
-        <a href="#overview">Overview</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+    <div class="nav-container">
+        <div class="logo">AZIRA LTD</div>
+        <div class="nav-links">
+            <a href="#overview">Overview</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
     </div>
-</nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-content">
-    <h1>Creating Unforgettable Events</h1>
-    <p>AZIRA LTD delivers exceptional exhibitions, trade fairs, and high-impact conferences that connect industries and inspire growth.</p>
-    <a href="#contact" class="btn">Request a Quote</a>
-</div>
+    <div class="hero-content">
+        <h1>Creating Unforgettable Events</h1>
+        <p>AZIRA LTD delivers exceptional exhibitions, trade fairs, and high-impact conferences that connect industries and inspire growth.</p>
+        <a href="#contact" class="btn">Request a Quote</a>
+    </div>
 </section>
 
 <!-- OVERVIEW -->
 <section id="overview">
-<div class="container">
-    <h2>Company Overview</h2>
-    <div class="card-grid">
-        <div class="card">
-            <div style="padding: 2rem;">
-                <h3>AZIRA LTD</h3>
-                <p><strong>Company Number:</strong> 17297067</p>
-                <p><strong>Incorporated:</strong> 23 June 2026</p>
-                <p><strong>Status:</strong> Active • Private Limited Company</p>
-                <p><strong>Registered Office:</strong><br>5 Alegria Court, Pembroke Road,<br>Ilford, IG3 8PH, United Kingdom</p>
+    <div class="container">
+        <h2>Company Overview</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div style="padding: 2.5rem;">
+                    <h3>AZIRA LTD</h3>
+                    <p><strong>Company Number:</strong> 17297067</p>
+                    <p><strong>Incorporated:</strong> 23 June 2026</p>
+                    <p><strong>Status:</strong> Active • Private Limited Company</p>
+                    <p><strong>Registered Office:</strong><br>
+                    5 Alegria Court, Pembroke Road,<br>Ilford, IG3 8PH, United Kingdom</p>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div style="padding: 2rem;">
-                <h3>Nature of Business</h3>
-                <ul style="line-height: 2;">
-                    <li><strong>82301</strong> — Activities of exhibition and fair organisers</li>
-                    <li><strong>82302</strong> — Activities of conference organisers</li>
-                </ul>
+            <div class="card">
+                <div style="padding: 2.5rem;">
+                    <h3>Nature of Business</h3>
+                    <ul style="line-height: 2.2;">
+                        <li><strong>82301</strong> — Activities of exhibition and fair organisers</li>
+                        <li><strong>82302</strong> — Activities of conference organisers</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" style="background: #f8fafc;">
-<div class="container">
-    <h2>Our Expertise</h2>
-    <div class="card-grid">
-        <div class="card">
-            <div class="service-img" style="background-image: url('https://picsum.photos/id/1015/800/600');">Exhibitions &amp; Fairs</div>
-            <div style="padding: 1.8rem;">
-                <p>Full-service trade shows and consumer exhibitions — concept to execution, including stand design, logistics, marketing, and attendee engagement.</p>
+    <div class="container">
+        <h2>Our Expertise</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="service-img" style="background-image: url('https://picsum.photos/id/1015/800/600');">
+                    Exhibitions &amp; Fairs
+                </div>
+                <div style="padding: 2rem;">
+                    <p>Full-service trade shows and consumer exhibitions — concept to execution, including stand design, logistics, marketing, and attendee engagement.</p>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="service-img" style="background-image: url('https://picsum.photos/id/201/800/600');">Conferences &amp; Summits</div>
-            <div style="padding: 1.8rem;">
-                <p>Professional conference management with speaker coordination, hybrid solutions, seamless delegate experience, and impactful networking opportunities.</p>
+            <div class="card">
+                <div class="service-img" style="background-image: url('https://picsum.photos/id/201/800/600');">
+                    Conferences &amp; Summits
+                </div>
+                <div style="padding: 2rem;">
+                    <p>Professional conference management with speaker coordination, hybrid solutions, seamless delegate experience, and impactful networking opportunities.</p>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="service-img" style="background-image: url('https://picsum.photos/id/251/800/600');">Event Strategy &amp; Consultancy</div>
-            <div style="padding: 1.8rem;">
-                <p>Strategic event planning, sponsorship acquisition, branding, and end-to-end project management for corporate and industry events.</p>
+            <div class="card">
+                <div class="service-img" style="background-image: url('https://picsum.photos/id/251/800/600');">
+                    Event Strategy &amp; Consultancy
+                </div>
+                <div style="padding: 2rem;">
+                    <p>Strategic event planning, sponsorship acquisition, branding, and end-to-end project management for corporate and industry events.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 
-<!-- GALLERY -->
+<!-- EVENTS -->
 <section style="background: #0f2b5b; color: white;">
-<div class="container">
-    <h2 style="color: white;">Events We Deliver</h2>
-    <div class="card-grid">
-        <div class="card" style="overflow:hidden;">
-            <img src="https://picsum.photos/id/870/600/400" alt="Exhibition Hall" style="width:100%; height:auto; display:block;">
-            <div style="padding:1.5rem; text-align:center;">Large-scale Trade Exhibitions</div>
-        </div>
-        <div class="card" style="overflow:hidden;">
-            <img src="https://picsum.photos/id/1016/600/400" alt="Conference" style="width:100%; height:auto; display:block;">
-            <div style="padding:1.5rem; text-align:center;">International Conferences</div>
-        </div>
-        <div class="card" style="overflow:hidden;">
-            <img src="https://picsum.photos/id/133/600/400" alt="Networking Event" style="width:100%; height:auto; display:block;">
-            <div style="padding:1.5rem; text-align:center;">Corporate &amp; Networking Events</div>
+    <div class="container">
+        <h2 style="color: white;">Events We Deliver</h2>
+        <div class="card-grid">
+            <div class="card" style="overflow:hidden;">
+                <img src="https://picsum.photos/id/870/600/400" alt="Exhibition Hall">
+                <div style="padding:1.5rem;">Large-scale Trade Exhibitions</div>
+            </div>
+            <div class="card" style="overflow:hidden;">
+                <img src="https://picsum.photos/id/1016/600/400" alt="Conference">
+                <div style="padding:1.5rem;">International Conferences</div>
+            </div>
+            <div class="card" style="overflow:hidden;">
+                <img src="https://picsum.photos/id/133/600/400" alt="Networking Event">
+                <div style="padding:1.5rem;">Corporate &amp; Networking Events</div>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- FILING -->
 <section id="filing">
-<div class="container">
-    <h2>Filing History &amp; People</h2>
-    <p style="text-align:center; max-width:700px; margin:0 auto 3rem; font-size:1.1rem;">
-        Company incorporated on <strong>23 June 2026</strong>.<br>
-        First accounts due by 23 March 2028 • First confirmation statement due by 6 July 2027.
-    </p>
-    <div style="text-align:center; background:white; padding:2.5rem; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.1); max-width: 700px; margin: 0 auto;">
-        <p><strong>Directors and key personnel details</strong> are available on Companies House (Company No. 17297067).</p>
+    <div class="container">
+        <h2>Filing History &amp; People</h2>
+        <p style="text-align:center; max-width:700px; margin:0 auto 3rem;">
+            Company incorporated on <strong>23 June 2026</strong>.<br>
+            First accounts due by 23 March 2028 • First confirmation statement due by 6 July 2027.
+        </p>
+        <div style="text-align:center; background:white; padding:3rem; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.1);">
+            <p><strong>Directors and key personnel details</strong> are available on Companies House (Company No. 17297067).</p>
+        </div>
     </div>
-</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" style="background: #f8fafc;">
-<div class="container">
-    <h2>Let's Create Your Next Event</h2>
-    <div class="card-grid">
-        <div class="card">
-            <div style="padding: 2rem;">
-                <h3>Registered Office</h3>
-                <p>5 Alegria Court, Pembroke Road<br>Ilford, IG3 8PH<br>United Kingdom</p>
+    <div class="container">
+        <h2>Let's Create Your Next Event</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div style="padding: 2.5rem;">
+                    <h3>Registered Office</h3>
+                    <p>5 Alegria Court, Pembroke Road<br>Ilford, IG3 8PH<br>United Kingdom</p>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div style="padding: 2rem;">
-                <h3>Contact Us</h3>
-                <p><strong>Email:</strong> info@azira.co.uk</p>
-                <p><strong>Phone:</strong> +44 (0) 20 </p>
-                <a href="#" class="btn" style="margin-top:1.5rem; display:inline-block;">Start Planning Your Event</a>
+            <div class="card">
+                <div style="padding: 2.5rem;">
+                    <h3>Contact Us</h3>
+                    <p><strong>Email:</strong> info@azira.co.uk</p>
+                    <p><strong>Phone:</strong> +44 (0) 20 </p>
+                    <a href="#" class="btn" style="margin-top:1.5rem; display:inline-block;">Start Planning Your Event</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<div class="container">
-    <div>
-        <div class="logo" style="color:white; margin-bottom:0.5rem;">AZIRA LTD</div>
-        <p>Exhibition &amp; Conference Organisers</p>
+    <div class="container">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:3rem;">
+            <div>
+                <div class="logo" style="color:white;">AZIRA </div>
+                <p>Exhibition &amp; Conference Organisers</p>
+            </div>
+            <div>
+                <h4 style="color:white;">Company</h4>
+                <p>Company No. 17297067</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid #334155; font-size:0.95rem;">
+            © 2026 AZIRA LTD. All Rights Reserved.
+        </div>
     </div>
-    <div>
-        <h4 style="color:white; margin-bottom:0.5rem;">Company</h4>
-        <p>Company No. 17297067</p>
-    </div>
-</div>
-<div style="text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid #334155; font-size:0.9rem;">
-    © 2026 AZIRA LTD. All Rights Reserved.
-</div>
 </footer>
+
 </body>
 </html>
